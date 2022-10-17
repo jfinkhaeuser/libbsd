@@ -143,6 +143,10 @@ funopen(const void *cookie,
  * they will not add the needed support to implement it. Just ignore this
  * interface there, as it has never been provided anyway.
  */
+#elif defined(__ANDROID__)
+/*
+ * The Android NDK sysroot does not have fopencookie.
+ */
 #else
 #error "Function funopen() needs to be ported or disabled."
 #endif
